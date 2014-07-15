@@ -1,18 +1,18 @@
 #create a mapping state to abbreviation 
-states = [
+states = {
 	'Oregon':'OR',
 	'Florida': 'FL',
 	'California': 'CA',
 	'New York': 'NY',
 	'Michigan': 'MI'
-]
+}
 
 #create the basis set of states and some cities in them
-cities = [
+cities = {
 	'CA': 'San Francisco',
 	'MI': 'Detroit',
 	'FL': 'Jacksonville'
-]
+}
 
 #add more cities
 cities['NY'] = 'New York'
@@ -35,17 +35,17 @@ print "Florida has: ", cities[states['Florida']]
 
 #print every states abbreviation
 print '-' * 10
-for state, abbrev in states.item():
+for state, abbrev in states.items():
 	print "%s is abbreviation for %s." %(state, abbrev)
 
 #print 	every cities in state
 print '-' * 10
-for city,abbrev in cities.item():
+for city,abbrev in cities.items():
 	print "%s has the city %s." %(city,abbrev)
 
 #now do both at the same time
 print '-' * 10
-for state, abbrev in states.item():
+for state, abbrev in states.items():
 	print "%s state is abbreviated %s and has city %s." % (state, abbrev, cities[abbrev])
 
 print '-' * 10
@@ -57,4 +57,9 @@ if not state:
 
 #get a city with default value
 city = cities.get('TX', 'Does not exist.')
+print "The city fot the state 'TX' is: %s" % city
+
+
+#get a city with default value
+city = cities.get('CA', 'Does not exist.')
 print "The city fot the state 'TX' is: %s" % city
